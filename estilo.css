@@ -1,0 +1,468 @@
+/* ============================================
+   ESTILOS PARA MÁXIMA VISIBILIDAD EN MÓVIL
+   ============================================ */
+
+:root {
+    --color-tinto-fuerte: #800000;
+    --color-tinto-tenue: #9b3030;
+    --color-tinto-oscuro: #600000;
+    --color-fondo: #ffffff;
+    --color-fondo-suave: #f8f9fa;
+    --color-texto: #1a1a1a;
+    
+    --fuente-tamaño-base: 20px;
+    --fuente-tamaño-h1: 36px;
+    --fuente-tamaño-h2: 28px;
+    
+    --radio-borde: 15px;
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+html, body {
+    font-family: sans-serif;
+    font-size: var(--fuente-tamaño-base);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.4;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* ============================================
+   HEADER CON ICONOS (LOGO Y CARRITO)
+   ============================================ */
+
+header.bloque-titulo {
+    background: var(--color-tinto-tenue) !important;
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+header.bloque-titulo h1 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    flex: 1;
+    margin: 0;
+}
+
+header.bloque-titulo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 !important;
+    background: transparent;
+}
+
+.bloque-titulo:last-of-type {
+    background: var(--color-tinto-tenue) !important;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* ============================================
+   CARRUSEL CON DESCRIPCIÓN
+   ============================================ */
+
+.carrusel {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: var(--radio-borde);
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.carrusel-contenedor-imagenes {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    align-items: center;      /* centra vertical */
+    justify-content: center;
+}
+
+.carrusel-pista {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.carrusel-descripcion {
+    padding: 15px;
+    background: var(--color-tinto-tenue);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    transition: opacity 0.3s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-nav {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-tinto-fuerte);
+}
+
+.anterior { left: 10px; }
+.siguiente { right: 10px; }
+
+/* ============================================
+   CONTENEDORES Y TEXTO
+   ============================================ */
+
+.texto, .texto2, .texto3, .acordeon {
+    width: 92% !important;
+    margin: 20px auto !important;
+    padding: 25px 15px !important;
+    background: var(--color-fondo-suave);
+    border-radius: var(--radio-borde);
+}
+
+h2 {
+    font-size: var(--fuente-tamaño-h2);
+    color: var(--color-tinto-fuerte);
+    margin-bottom: 12px;
+}
+
+p, li {
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 35px;
+    margin-bottom: 15px;
+}
+
+li {
+    padding-left: 5px;
+}
+
+/* ============================================
+   IMÁGENES GENERALES
+   ============================================ */
+
+.imagen-enlace, img:not(.slide):not(.acordeon summary img):not(header img) {
+    width: 75%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   ACORDEÓN TINTO
+   ============================================ */
+
+.acordeon details {
+    background: white;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.acordeon summary {
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 800;
+    background: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+}
+
+.acordeon summary img {
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.acordeon details[open] summary {
+    background: var(--color-tinto-fuerte);
+    color: white;
+}
+
+.acordeon .contenido {
+    padding: 20px;
+    background: white;
+}
+
+/* ============================================
+   ENGRANAJE Y PROCESO
+   ============================================ */
+
+.proceso { text-align: center; padding: 15px 0; }
+
+.engranaje { 
+    width: 90px; 
+    height: 90px; 
+    margin-bottom: 20px; 
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    background-color: transparent;
+}
+
+.engranaje.rotado {
+    animation: girarEngranaje 0.5s ease-in-out;
+}
+
+@keyframes girarEngranaje {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.paso {
+    font-size: 22px;
+    padding: 20px;
+    background: #fff;
+    border: 3px solid var(--color-tinto-fuerte);
+    border-radius: 12px;
+    font-weight: 800;
+    color: var(--color-tinto-fuerte);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ============================================
+   ESTILOS PARA LA TIENDA
+   ============================================ */
+
+.contenedor-tienda {
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tarjeta-producto {
+    background: white;
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-contenedor {
+    background-color: var(--color-producto);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagen-contenedor img {
+    width: 80% !important;
+    max-width: 200px !important;
+    height: auto !important;
+    z-index: 1;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    margin: 0 !important;
+}
+
+.info-producto {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-height: 350px; /* Aumentado para dar más espacio inicial */
+}
+
+.info-producto h2 {
+    margin-top: 0;
+    color: var(--color-tinto-fuerte);
+    font-size: 24px;
+    min-height: 60px; /* Cambiado de height a min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.bloque-descripcion {
+    min-height: 120px; /* Aumentado y cambiado a min-height */
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para múltiples párrafos */
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.descripcion {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 8px; /* Espacio entre los párrafos de descripción */
+    width: 100%;
+}
+
+.bloque-precio {
+    margin-top: auto;
+}
+
+.precio {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--color-tinto-fuerte);
+    margin-bottom: 10px;
+}
+
+.flecha-prod {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.6);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha-prod.izq { left: 10px; }
+.flecha-prod.der { right: 10px; }
+
+.btn-comprar {
+    width: 100%;
+    padding: 15px;
+    background: var(--color-tinto-fuerte);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .contenedor-tienda {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .tarjeta-producto {
+        width: 300px;
+    }
+}
+
+
+
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 16px; /* Un poco más pequeña para que quepa en móviles */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilo para el encabezado de la tabla */
+table tr:first-child th {
+    background-color: white;
+    color: black;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Estilo para la primera columna (las etiquetas) */
+table tr td:first-child, table tr th:first-child {
+    font-weight: 700;
+    color: black;
+    background-color: #fcfcfc;
+    width: 40%; /* Proporción para que no se amontone */
+}
+
+/* Efecto cebra para las filas */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Ajuste para que la tabla no se salga del contenedor en móviles */
+.contenido {
+    overflow-x: auto;
+    padding: 10px;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
